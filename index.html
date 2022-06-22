@@ -24,70 +24,86 @@
         paymentMessage : '',
 
         
-buySmall(){
-               this.smallTotal+=39.00;
-               this.smallQty+=1
+buySmall()
+        {
+         this.smallTotal+=39.00;
+         this.smallQty+=1
         },
-        clearSmall(){
-            if (this.smallQty > 0 ){
-                this.smallTotal-=39.00;
-                this.smallQty-=1
+        
+        clearSmall()
+        {
+            if (this.smallQty > 0 )
+            {
+             this.smallTotal-=39.00;
+             this.smallQty-=1
             }
                
         },
-        buyMedium(){
+buyMedium()
+        {
             this.mediumTotal+=79.00;
             this.mediumQty+=1
         },
-       clearMedium(){
-           if (this.mediumQty > 0 ){
-            this.mediumTotal-=79.00;
-            this.mediumQty-=1
+
+        clearMedium()
+        {
+           if (this.mediumQty > 0 )
+           {
+              this.mediumTotal-=79.00;
+              this.mediumQty-=1
            }
             
         },
-        buyLarge(){
+buyLarge()
+        {
             this.largeTotal+=149.00;
             this.largeQty+=1
         },
-       clearLarge(){
-           if (this.largeQty > 0){
-            this.largeTotal-=149.00;
-            this.largeQty-=1
+clearLarge()
+       {
+           if (this.largeQty > 0)
+           {
+             this.largeTotal-=149.00;
+             this.largeQty-=1
            }
            
         },
-        clearCart(){
-        this.smallQty = 0;
-        this.smallTotal = 0;
-        this.mediumQty = 0;
-        this.mediumTotal = 0.00;
-        this.largeQty = 0;
-        this.largeTotal = 0
+clearCart()
+        {
+          this.smallQty = 0;
+          this.smallTotal = 0;
+          this.mediumQty = 0;
+          this.mediumTotal = 0.00;
+          this.largeQty = 0;
+          this.largeTotal = 0
         },
-        makePayment() {
-            
-           if (!this.paymentAmount){
-            this.paymentMessage ='No Amount entered!'
-           }
+makePayment() 
+        { 
+            if (!this.paymentAmount)
+            {
+               this.paymentMessage ='No Amount entered!'
+            }
 
-           if (this.paymentAmount >= this.cartTotal()){
-            this.paymentMessage ='Payment Succesful!'
-            
-            setTimeout(() => {
+           if (this.paymentAmount >= this.cartTotal())
+           {
+            this.paymentMessage ='Payment Succesful! Enjoy your pizzas'
+            setTimeout(() => 
+            {
             this.clearCart()
             this.payNow = false;
-           },3000);
+            },3000);
         
            } else {
-            this.paymentMessage ='Payment Failed!'
+                   this.paymentMessage ='Payment Failed! Sorry - that is not enough money!'
            }
            
         },
-        cartTotal(){
+        cartTotal()
+        {
             return this.smallTotal + this.mediumTotal + this.largeTotal;
         },
-        totalQty(){
+        totalQty()
+        {
              return this.smallQty + this.mediumQty + this.largeQty;
         }
     
@@ -95,6 +111,12 @@ buySmall(){
     <div class="header">
         <div class="f3 header" x-show="!showCart">
             <h1>For the Love of Perfect Pizza.</h1>
+            
+            <img src="https://th.bing.com/th/id/OIP.hda_jnJZ_8Vl40iq0dP39wHaHN?w=213&h=207&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="" width="40">
+            <img src="https://www.bing.com/th?id=ATOOL90B8AE9C7F541AC3358FE6D01CF48B2760134AB3CD5A9FF8C5B91B7904CA049D&w=120&h=120&c=7&rs=1&qlt=80&o=6&dpr=1.25&pid=SANGAM" alt="" width="40">
+            <img src="https://th.bing.com/th/id/OIP.XyqzJ1cZnk-_dQyQduXfQQHaHh?w=157&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="" width="40">
+            
+            <small> Inspired by <a href="https://www.bing.com/images/search?q=Healthy+Pizza&form=IRBPRS&first=1&tsc=ImageHoverTitle">healthyPizzas</a> </small>
         </div>
         <div class="f1 header  ">
             <button x-on:click ="showCart= true" x-show="!showCart" >
@@ -113,12 +135,7 @@ buySmall(){
         <div class="cart-box">
             <div class="cart" x-show="showCart">
 
-
-
-
                 <button x-on:click="showCart=false" ><img src="takeaway.gif" width="30" alt="">Close Cart</button>
-
-
             
                 <table>
                     <tr x-show = "smallQty > 0"x-show = "smallQty > 0">
@@ -202,13 +219,6 @@ buySmall(){
         </div>
     </div>
 
-
-
-
-
-
-
-
     <div class="Pizzas">
         <div class="Pizza small_Pizza">
             <div>
@@ -249,13 +259,13 @@ buySmall(){
                 <img src="bbq.png" width="20" alt="">Buy</button>
 
 
-            <div>Margeritha pizza with 3 toppings max. 2 or less meat topping. 3 or less other toppings.</div>
+            <div>Margeritha pizza with 3 toppings max, 2 or less meat topping and 3 or less other toppings.</div>
         </div>
         <div class="Pizza large_Pizza">
             <div>
                 <h2>Large Pizza </h2>
             </div>
-            <img src="https://imgix.bustle.com/uploads/image/2018/4/27/349b1bf5-c3ee-450d-a355-4b82e8a8988a-double-cheesy-crust-pan-pizza-01.jpg?w=1020&h=574&fit=crop&crop=faces&auto=format%2Ccompress&cs=srgb&q=70" width="300" alt="">
+            <img src="https://th.bing.com/th/id/OIP.XyqzJ1cZnk-_dQyQduXfQQHaHh?w=157&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" width="300" alt="">
             
             <div>
                 <h3>R149.00</h3>
@@ -264,12 +274,6 @@ buySmall(){
                 <img src="bbq.png" width="20" alt="">Buy</button>
             <div>Large margeritha pizza with 3 toppings max. 3 meat toppings max and 3 or less other toppings.</div>
         </div>
-
-
-
-
-
-
 
 
 

@@ -46,17 +46,6 @@
 	    margin: 1em;
 	}
 	
-
-	/* .title {
-	    background-color: #1982c4;
-	    border: solid black;
-	    padding: 1em;
-	    margin: 1em;
-	    text-align: center;
-	
-	} */
-	
-
 	@media(min-width: 768px) {
 	    .Pizzas{
 	        display: flex;
@@ -87,14 +76,14 @@
 	}
 	table, th, td{
 	    width: 70%;
-	    
+  
 	 }
 	
 
 	.message{
 	    padding: 1em;
 	    margin: 1em;
-	    background-color: orange;
+	    background-color: olive;
 	}
 	.header{
 	    background-color: palevioletred;
