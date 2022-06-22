@@ -1,0 +1,110 @@
+/* .Pizzas {
+	    display: flex;
+	} */
+	
+
+	.Pizza {
+	
+
+	    border: brown;
+	    padding: 1em;
+	    margin: 1em;
+	    border-radius: 1em;
+	    flex: 1;
+	
+
+	}
+	
+
+	.medium_Pizza {
+	    background-color: yellow;
+	
+
+	}
+	
+
+	.large_Pizza {
+	    background-color: orangered;
+	
+
+	}
+	
+
+	.small_Pizza {
+	    background-color: purple;
+	
+
+	}
+	
+
+	
+
+	.contact_Us {
+	    background-color: palevioletred;
+	    border: brown;
+	    padding: 1em;
+	    margin: 1em;
+	}
+	
+
+	/* .title {
+	    background-color: #1982c4;
+	    border: solid black;
+	    padding: 1em;
+	    margin: 1em;
+	    text-align: center;
+	
+	} */
+	
+
+	@media(min-width: 768px) {
+	    .Pizzas{
+	        display: flex;
+	    }
+	
+
+	    body {
+	        background-color: orange;
+	    }
+	    /* .container{
+	        display: flex;
+	    } */
+	    .header{
+	    display: flex;
+	   } 
+	}
+	table, th, td{
+	    /* border: 1px solid #1982c4; */
+	    text-align:left;
+	    /* background-color:  ; */
+	    border: 1px solid white;
+	    padding: 0,7em;
+	    margin: 0,7em;
+	    /* text-align: center; */
+	    border-collapse: collapse;
+	    table-layout: fixed ;
+	    
+	}
+	table, th, td{
+	    width: 70%;
+	    
+	 }
+	
+
+	.message{
+	    padding: 1em;
+	    margin: 1em;
+	    background-color: orange;
+	}
+	.header{
+	    background-color: palevioletred;
+	    position: left;
+	    
+	    padding: 1em;
+	    margin: 1em;
+	    border-radius: 1em;
+	}
+	/* .box{
+	    flex:1;
+	} */
+
