@@ -11,18 +11,21 @@
 
 
 <body>
+    
+
     <div class="container"
-    x-data="{showCart:false
-        ,smallQty:0,
+    x-data="{
+        showCart:false,
+        smallQty:0,
         smallTotal:0,
         mediumQty: 0,
         mediumTotal: 0.00,
         largeQty: 0,
         largeTotal : 0,
         payNow : false,
+        pay : 'hide',
         paymentAmount : 0,
         paymentMessage : '',
-
         
 buySmall()
         {
@@ -44,7 +47,6 @@ buyMedium()
             this.mediumTotal+=79.00;
             this.mediumQty+=1
         },
-
         clearMedium()
         {
            if (this.mediumQty > 0 )
@@ -75,7 +77,7 @@ clearCart()
           this.mediumQty = 0;
           this.mediumTotal = 0.00;
           this.largeQty = 0;
-          this.largeTotal = 0
+          this.largeTotal = 0;
         },
 makePayment() 
         { 
@@ -83,7 +85,6 @@ makePayment()
             {
                this.paymentMessage ='No Amount entered!'
             }
-
            if (this.paymentAmount >= this.cartTotal())
            {
             this.paymentMessage ='Payment Succesful! Enjoy your pizzas'
@@ -91,6 +92,7 @@ makePayment()
             {
             this.clearCart()
             this.payNow = false;
+            this.showCart=false
             },3000);
         
            } else {
@@ -118,6 +120,7 @@ makePayment()
             
             <small> Inspired by <a href="https://www.bing.com/images/search?q=Healthy+Pizza&form=IRBPRS&first=1&tsc=ImageHoverTitle">healthyPizzas</a> </small>
         </div>
+    
         <div class="f1 header  ">
             <button x-on:click ="showCart= true" x-show="!showCart" >
                 <img src="takeaway.gif" width="30" alt="">Cart
@@ -136,7 +139,7 @@ makePayment()
             <div class="cart" x-show="showCart">
 
                 <button x-on:click="showCart=false" ><img src="takeaway.gif" width="30" alt="">Close Cart</button>
-            
+                
                 <table>
                     <tr x-show = "smallQty > 0"x-show = "smallQty > 0">
                         <td >
@@ -190,13 +193,13 @@ makePayment()
 
                         </td>
                     </tr >
-                    <tr>
+                    <tr x-show="totalQty()>0">
                         <td colspan="2">
                             <div x-show = "payNow">
-                                <div class="message"  x-text = "paymentMessage"></div>
+                                <div class="message"  x-text = "paymentMessage">Message......</div>
                                 <div>
-                                    <label for="">Payment Amount</label>
-                                    <input class="input" type="number" placeholder="Payment Amount" x-model="paymentAmount">
+                                    <label for="">Pay Amount</label>
+                                    <input class="input" type="number" placeholder="Pay Amount" x-model="paymentAmount">
                                     <button  x-on:click= "makePayment()"  class="btn">
                                         <img src="delivery.gif" width="20" alt="">
                                         Pay Now</button>
@@ -205,11 +208,11 @@ makePayment()
                                 
                             </div>
                             
-                        </td>
-                        <td>
-                            <button x-show = "!payNow" x-on:click ="payNow =true" x-show class="btn">
-                                <img src="delivery.gif" width="20" alt="">
-                                Pay</button>
+                            <td>
+                                <button x-show="!payNow"x-on:click="payNow=true" class="btn5">
+                                    <img src="images/cartpng.jpg" width="20" alt="">Pay
+                                </button>
+                            </td>
                         </td>
                     </tr>
                 </table> 
